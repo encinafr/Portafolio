@@ -1,10 +1,16 @@
 
-<mat-sidenav-container class="example-container" autosize>
+<mat-sidenav-container app-theme class="example-container" autosize>
 	<mat-toolbar color="primary" class="example-toolbar">
 		<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
 		<h1 class="example-app-name">Nested Menus</h1>
 		<button (click)="changeLanguage('es')">Español</button>
 		<button (click)="changeLanguage('en')">Inglés</button>
+		<span>Light</span>
+		<label class="switch">
+		  <input type="checkbox" (click)="toggle()" >
+		  <span class="slider round"></span>
+		</label>
+		<span>Dark</span>
 	</mat-toolbar>
 	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
 		<mat-nav-list>

@@ -2,6 +2,7 @@ import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy, ViewChild} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { ThemeService } from './theme/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   @ViewChild('sidenav') sidenav: MatSidenav;
  
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private themeService: ThemeService) {
     this.translate.setDefaultLang(this.activeLang);
   }
   
@@ -40,6 +41,17 @@ export class AppComponent {
   public changeLanguage(lang) {
     this.activeLang = lang;
     this.translate.use(lang);
+  }
+
+  toggle() {
+    const active = this.themeService.getActiveTheme() ;
+
+    console.log(active);
+    if (active.name === 'light') {
+      this.themeService.setTheme('dark');
+    } else {
+      this.themeService.setTheme('light');
+    }
   }
   //#endregion
 

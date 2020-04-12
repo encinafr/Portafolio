@@ -31,3 +31,11 @@
 .submenu.expanded {
   transform: scaleY(1);
 }
+
+.mat-drawer-containe{
+  background: var(--background) !important;
+}
+
+.mat-toolbar.mat-primary{
+  background: var(--background) !important;
+}

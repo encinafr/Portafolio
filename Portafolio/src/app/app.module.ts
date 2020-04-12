@@ -19,6 +19,9 @@ import { Page404Component } from './page404/page404.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ThemeModule } from './theme/theme.module';
+import { lightTheme } from './theme/light-theme';
+import { darkTheme } from './theme/dark-theme';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
         },
         deps: [ HttpClient ]
       }
+    }),
+    ThemeModule.forRoot({
+      themes: [lightTheme, darkTheme],
+      active: 'light'
     })
   ],
   providers: [],
