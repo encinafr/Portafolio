@@ -25,7 +25,6 @@ export class ThemeDirective implements OnInit {
   }
 
   updateTheme(theme: Theme) {
-      console.log(this._elementRef.nativeElement)
     for (const key in theme.properties) {
       this._elementRef.nativeElement.style.setProperty(key, theme.properties[key]);
     }

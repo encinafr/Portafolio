@@ -3,6 +3,7 @@ import {ChangeDetectorRef, Component, OnDestroy, ViewChild} from '@angular/core'
 import { TranslateService } from '@ngx-translate/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { ThemeService } from './theme/theme.service';
+import {ThemePalette} from '@angular/material/core';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,12 @@ export class AppComponent {
   isShowing = false;
   showSubSubMenu: boolean = false;
 
+  //switch
+  color: ThemePalette = 'accent';
+  checked = false;
+  disabled = false;
+
+
   mouseenter() {
     if (!this.isExpanded) {
       this.isShowing = true;
@@ -46,7 +53,6 @@ export class AppComponent {
   toggle() {
     const active = this.themeService.getActiveTheme() ;
 
-    console.log(active);
     if (active.name === 'light') {
       this.themeService.setTheme('dark');
     } else {

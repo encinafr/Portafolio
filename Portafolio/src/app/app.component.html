@@ -1,19 +1,27 @@
 
 <mat-sidenav-container app-theme class="example-container" autosize>
-	<mat-toolbar color="primary" class="example-toolbar">
-		<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+	<mat-toolbar color="primary" app-theme  class="example-toolbar">
+		<!-- <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button> -->
 		<h1 class="example-app-name">Nested Menus</h1>
 		<button (click)="changeLanguage('es')">Español</button>
 		<button (click)="changeLanguage('en')">Inglés</button>
 		<span>Light</span>
-		<label class="switch">
+		<!-- <label class="switch">
 		  <input type="checkbox" (click)="toggle()" >
 		  <span class="slider round"></span>
-		</label>
+		</label> -->
+		<mat-slide-toggle
+		 (click)="toggle()"
+          class="example-margin"
+          [color]="color"
+          [checked]="checked"
+          [disabled]="disabled">
+        Slide me!
+      </mat-slide-toggle>
 		<span>Dark</span>
 	</mat-toolbar>
-	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
-		<mat-nav-list>
+	<mat-sidenav #sidenav class="example-sidenav" app-theme  mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+		<mat-nav-list app-theme >
 			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 				<span class="full-width" *ngIf="isExpanded || isShowing">{{ 'home.title' | translate }}</span>
 				<mat-icon mat-list-icon>home</mat-icon>
@@ -32,11 +40,9 @@
 				</div>
 			</div>
 		</mat-nav-list>
-    <mat-nav-list>
-</mat-nav-list>
 	</mat-sidenav>
 
-	<div class="example-sidenav-content">
+	<div class="example-sidenav-content" >
 		Main content that resizes properly
 	</div>
 

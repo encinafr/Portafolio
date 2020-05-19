@@ -38,4 +38,5 @@
 
 .mat-toolbar.mat-primary{
   background: var(--background) !important;
+  color: var(--on-primary);
 }

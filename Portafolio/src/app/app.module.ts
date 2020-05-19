@@ -14,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
 
+
 import { Page404Component } from './page404/page404.component';
 //Translation
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
